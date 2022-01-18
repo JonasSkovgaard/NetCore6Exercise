@@ -7,15 +7,20 @@
 <html lang="en">
     <head>
         <meta charset="utf-8" />
-        <title>Embedded Video Example</title>
+        <title>Embedded Video Example @Html.DisplayFor(model => model.Link)</title>
     </head>
     <body>
-        <h1>@Html.DisplayNameFor(model => model.Link)</h1>
+        <h1>@Html.DisplayFor(model => model.Title) is playing</h1>
         <p>The following video provides an introduction to WebMatrix:</p>
-        <iframe width="560" 
-                height="315" 
-                src="" 
+        <iframe width="1000" 
+                height="550" 
+                src="@Html.DisplayFor(model => model.Link)" 
                 frameborder="0" 
+                id="video"
                 allowfullscreen></iframe>
+               
+                <div>
+    <a asp-action="Index">Back to List</a>
+</div>
 </body>
 </html>

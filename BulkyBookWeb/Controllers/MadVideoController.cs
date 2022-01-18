@@ -97,6 +97,7 @@ namespace BulkyBookWeb.Controllers
             {
                 _context.Add(madVideo);
                 await _context.SaveChangesAsync();
+                TempData["Succes"] = "Category created succesfully";
                 return RedirectToAction(nameof(Index));
             }
             return View(madVideo);
@@ -136,6 +137,7 @@ namespace BulkyBookWeb.Controllers
                 {
                     _context.Update(madVideo);
                     await _context.SaveChangesAsync();
+                    TempData["Succes"] = "Edit saved!";
                 }
                 catch (DbUpdateConcurrencyException)
                 {
@@ -167,7 +169,7 @@ namespace BulkyBookWeb.Controllers
             {
                 return NotFound();
             }
-
+            TempData["Succes"] = "Category deleted succesfully";
             return View(madVideo);
         }
 
