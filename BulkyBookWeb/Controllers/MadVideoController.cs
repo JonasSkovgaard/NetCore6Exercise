@@ -20,6 +20,25 @@ namespace BulkyBookWeb.Controllers
             _context = context;
         }
 
+        // Get: PlayerView
+
+        public async Task<IActionResult> Player(int? id)
+        {
+            if (id == null)
+            {
+                return NotFound();
+            }
+
+            var madVideo = await _context.MadVideos
+                .FirstOrDefaultAsync(m => m.Id == id);
+            if (madVideo == null)
+            {
+                return NotFound();
+            }
+
+            return View(madVideo);
+        }
+
         // GET: MadVideo
         public async Task<IActionResult> Index()
         {

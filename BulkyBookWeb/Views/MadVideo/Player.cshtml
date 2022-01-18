@@ -1,0 +1,21 @@
+﻿@model BulkyBookWeb.Models.MadVideo
+
+@{
+    ViewData["Title"] = "Player";
+}
+
+<html lang="en">
+    <head>
+        <meta charset="utf-8" />
+        <title>Embedded Video Example</title>
+    </head>
+    <body>
+        <h1>@Html.DisplayNameFor(model => model.Link)</h1>
+        <p>The following video provides an introduction to WebMatrix:</p>
+        <iframe width="560" 
+                height="315" 
+                src="" 
+                frameborder="0" 
+                allowfullscreen></iframe>
+</body>
+</html>
